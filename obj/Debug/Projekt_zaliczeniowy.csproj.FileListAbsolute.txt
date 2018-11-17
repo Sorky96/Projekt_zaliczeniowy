@@ -1,0 +1,7 @@
+C:\Users\ziemn\source\repos\Projekt_zaliczeniowy\Projekt_zaliczeniowy\bin\Debug\Projekt_zaliczeniowy.exe.config
+C:\Users\ziemn\source\repos\Projekt_zaliczeniowy\Projekt_zaliczeniowy\bin\Debug\Projekt_zaliczeniowy.exe
+C:\Users\ziemn\source\repos\Projekt_zaliczeniowy\Projekt_zaliczeniowy\bin\Debug\Projekt_zaliczeniowy.pdb
+C:\Users\ziemn\source\repos\Projekt_zaliczeniowy\Projekt_zaliczeniowy\obj\Debug\Projekt_zaliczeniowy.csprojResolveAssemblyReference.cache
+C:\Users\ziemn\source\repos\Projekt_zaliczeniowy\Projekt_zaliczeniowy\obj\Debug\Projekt_zaliczeniowy.csproj.CoreCompileInputs.cache
+C:\Users\ziemn\source\repos\Projekt_zaliczeniowy\Projekt_zaliczeniowy\obj\Debug\Projekt_zaliczeniowy.exe
+C:\Users\ziemn\source\repos\Projekt_zaliczeniowy\Projekt_zaliczeniowy\obj\Debug\Projekt_zaliczeniowy.pdb
