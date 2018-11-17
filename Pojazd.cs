@@ -17,17 +17,17 @@ namespace Projekt_zaliczeniowy
         
         public float Marza
         {
-            get;
+            get { return fMarza; }
         }
 
         public float CenaZakupu
         {
-            get;
+            get { return fCenaZakupu; }
         }
 
         public int RokProdukcji
         {
-            get;
+            get { return iRokProdukcji; }
         }
 
         public void WyswietlRok()
