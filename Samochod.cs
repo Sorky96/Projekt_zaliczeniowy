@@ -8,14 +8,18 @@ namespace Projekt_zaliczeniowy
 {
     abstract class Samochod : Pojazd
     {
-        public override string WyswietlModel()
+        public Samochod(float cenaZakupu, float marza, int rokProdukcji) : base(cenaZakupu,marza,rokProdukcji)
         {
-            return "Pojazd";
+          
         }
     }
 
     abstract class Ford : Samochod
     {
+        public Ford(float cenaZakupu, float marza, int rokProdukcji) : base(cenaZakupu, marza, rokProdukcji)
+        {
+
+        }
         public override string WyswietlMarke()
         {
             return "Ford";
@@ -24,6 +28,10 @@ namespace Projekt_zaliczeniowy
 
     abstract class Fiat : Samochod
     {
+        public Fiat(float cenaZakupu, float marza, int rokProdukcji) : base(cenaZakupu, marza, rokProdukcji)
+        {
+
+        }
         public override string WyswietlMarke()
         {
             return "Fiat";
@@ -32,6 +40,14 @@ namespace Projekt_zaliczeniowy
 
     sealed class Mustang : Ford
     {
+        public Mustang(float cenaZakupu, float marza, int rokProdukcji) : base(cenaZakupu, marza, rokProdukcji)
+        {
+
+        }
+        public override string WyswietlTypPojazdu()
+        {
+            return "Samochod";
+        }
         public override string WyswietlModel()
         {
             return "Mustang";
@@ -40,6 +56,14 @@ namespace Projekt_zaliczeniowy
 
     sealed class Ranger : Ford
     {
+        public Ranger(float cenaZakupu, float marza, int rokProdukcji) : base(cenaZakupu, marza, rokProdukcji)
+        {
+
+        }
+        public override string WyswietlTypPojazdu()
+        {
+            return "Samochod";
+        }
         public override string WyswietlModel()
         {
             return "Ranger";
@@ -48,6 +72,14 @@ namespace Projekt_zaliczeniowy
 
     sealed class Multipla : Fiat
     {
+        public Multipla(float cenaZakupu, float marza, int rokProdukcji) : base(cenaZakupu, marza, rokProdukcji)
+        {
+
+        }
+        public override string WyswietlTypPojazdu()
+        {
+            return "Samochod";
+        }
         public override string WyswietlModel()
         {
             return "Multipla";
@@ -56,6 +88,14 @@ namespace Projekt_zaliczeniowy
 
     sealed class Panda : Fiat
     {
+        public Panda(float cenaZakupu, float marza, int rokProdukcji) : base(cenaZakupu, marza, rokProdukcji)
+        {
+
+        }
+        public override string WyswietlTypPojazdu()
+        {
+            return "Samochdod";
+        }
         public override string WyswietlModel()
         {
             return "Panda";

@@ -8,14 +8,19 @@ namespace Projekt_zaliczeniowy
 {
     abstract class Motocykl : Pojazd
     {
-        public override string WyswietlTypPojazdu()
+        public Motocykl(float cenaZakupu, float marza, int rokProdukcji) : base(cenaZakupu, marza, rokProdukcji)
         {
-            return "Motocykl";
+
         }
+        
     }
 
     abstract class Suzuki : Motocykl
     {
+        public Suzuki(float cenaZakupu, float marza, int rokProdukcji) : base(cenaZakupu, marza, rokProdukcji)
+        {
+
+        }
         public override string WyswietlMarke()
         {
             return "Su-zuuu-kiii";
@@ -24,6 +29,10 @@ namespace Projekt_zaliczeniowy
 
     abstract class Honda : Motocykl
     {
+        public Honda(float cenaZakupu, float marza, int rokProdukcji) : base(cenaZakupu, marza, rokProdukcji)
+        {
+
+        }
         public override string WyswietlMarke()
         {
             return "Honda";
@@ -33,6 +42,14 @@ namespace Projekt_zaliczeniowy
 
     sealed  class SuperSport : Suzuki
     {
+        public SuperSport(float cenaZakupu, float marza, int rokProdukcji) : base(cenaZakupu, marza, rokProdukcji)
+        {
+
+        }
+        public override string WyswietlTypPojazdu()
+        {
+            return "Motocykl";
+        }
         public override string WyswietlModel()
         {
             return "SuperSport";

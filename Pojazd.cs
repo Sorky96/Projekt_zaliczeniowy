@@ -9,17 +9,22 @@ namespace Projekt_zaliczeniowy
     abstract class Pojazd
     {
 
-        private float fCenaZakupu;
-        private float fMarza;
-        private int iRokProdukcji;
+        private float fCenaZakupu = 0.0f;
+        private float fMarza = 0.0f;
+        private int iRokProdukcji = 0;
 
+        public Pojazd(float cenaZakupu, float marza, int rokProdukcji)
+        {
+            fMarza = marza;
+            fCenaZakupu = cenaZakupu;
+            iRokProdukcji = rokProdukcji;
+        }
 
-        
         public float Marza
         {
             get { return fMarza; }
         }
-
+        
         public float CenaZakupu
         {
             get { return fCenaZakupu; }
@@ -30,6 +35,9 @@ namespace Projekt_zaliczeniowy
             get { return iRokProdukcji; }
         }
 
+        
+
+       
         public void WyswietlRok()
         {
 
@@ -37,23 +45,15 @@ namespace Projekt_zaliczeniowy
 
         public float CenaKoncowa()
         {
-            return fCenaZakupu + fMarza;
+            return fCenaZakupu + (fCenaZakupu * fMarza);
         }
 
-        public virtual string WyswietlMarke()
-        {
-            return null;
-        }
+        public abstract string WyswietlMarke();
 
-        public virtual string WyswietlModel()
-        {
-            return null;
-        }
+        public abstract string WyswietlModel();
 
-        public virtual string WyswietlTypPojazdu()
-        {
-            return null;
-        }
+        public abstract string WyswietlTypPojazdu();
+       
 
 
        

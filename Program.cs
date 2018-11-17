@@ -18,13 +18,14 @@ namespace Projekt_zaliczeniowy
 
         static private void LetsMagicBegin()
         {
+
             List<Pojazd> lista = new List<Pojazd>();
-            Mustang mustang = new Mustang();
-            lista.Add(mustang);
+          
+
 
             foreach (object o in lista)
             {
-                Console.WriteLine(o);
+                Console.WriteLine(Convert.ToString(o));
             }
             
             GetMenuChoice();
@@ -61,7 +62,7 @@ namespace Projekt_zaliczeniowy
                     Console.Read();
               break;
                 case 2:
-
+                    Console.Write("------------------------------ \nWpisz jaki chcesz dodac pojazd");
                     break;
                 default:
 
