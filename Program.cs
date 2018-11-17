@@ -62,7 +62,13 @@ namespace Projekt_zaliczeniowy
                     Console.Read();
               break;
                 case 2:
-                    Console.Write("------------------------------ \nWpisz jaki chcesz dodac pojazd");
+                    Console.Write("------------------------------ \nWpisz jaki chcesz dodac pojazd\n");
+                    Console.Write("1. Ford Mustang\n");
+                    Console.Write("2. Ford Ranger\n");
+                    Console.Write("3. Fiat Multipla\n");
+                    Console.Write("4. Fiat Panda\n");
+                    Console.Write("5. Suzuki SuperSport\n");
+                    Console.Write("6. Honda\n");
                     break;
                 default:
 
