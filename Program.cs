@@ -10,6 +10,7 @@ namespace Projekt_zaliczeniowy
     {
         static void Main(string[] args)
         {
+            List <Pojazd> Lista = new List<Pojazd>();
         }
     }
 }

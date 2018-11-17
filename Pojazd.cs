@@ -8,10 +8,13 @@ namespace Projekt_zaliczeniowy
 {
     abstract class Pojazd
     {
-        float fCenaZakupu;
-        float fMarza;
-        int iRokProdukcji;
 
+        private float fCenaZakupu;
+        private float fMarza;
+        private int iRokProdukcji;
+
+
+        
         public float Marza
         {
             get;
@@ -52,5 +55,7 @@ namespace Projekt_zaliczeniowy
             return null;
         }
 
+
+       
     }
 }
