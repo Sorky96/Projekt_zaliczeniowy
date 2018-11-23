@@ -74,7 +74,7 @@ namespace Projekt_zaliczeniowy
                     marza = float.Parse(Console.ReadLine(), CultureInfo.InvariantCulture.NumberFormat);
 
                     Console.WriteLine("Wpisz rok_produkcji pojazdu");
-                    rok_produkcji = Convert.ToInt32(Console.ReadLine(), CultureInfo.InvariantCulture.NumberFormat);
+                    rok_produkcji = Convert.ToInt32(Console.ReadLine());
 
                     Console.Write("------------------------------ \nWpisz jaki chcesz dodac pojazd\n");
                     Console.Write("1. Ford Mustang\n");
