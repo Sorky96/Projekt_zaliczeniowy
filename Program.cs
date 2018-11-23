@@ -53,6 +53,8 @@ namespace Projekt_zaliczeniowy
 
         static private void Menu(int choice)
         {
+            int rok_produkcji;
+            float marza, cena;
             switch (choice)
             {
               case 1:
@@ -70,6 +72,16 @@ namespace Projekt_zaliczeniowy
                     Console.Write("4. Fiat Panda\n");
                     Console.Write("5. Suzuki SuperSport\n");
                     Console.Write("6. Honda\n");
+                    choice = Convert.ToInt32(Console.Read());
+
+                    Console.WriteLine("Wpisz cene pojazdu");
+                    cena = Convert.ToSingle(Console.ReadLine());
+
+                    Console.WriteLine("Wpisz marze pojazdu");
+                    marza = Convert.ToSingle(Console.ReadLine());
+
+                    Console.WriteLine("Wpisz rok_produkcji pojazdu");
+                    rok_produkcji = Convert.ToInt32(Console.ReadLine());
                     break;
                 default:
 
