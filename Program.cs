@@ -13,7 +13,8 @@ namespace Projekt_zaliczeniowy
             LetsMagicBegin();
 
             Console.Read();
-            
+            Mustang ford = new Mustang(1, 1, 2008);
+
         }
 
         static private void LetsMagicBegin()
