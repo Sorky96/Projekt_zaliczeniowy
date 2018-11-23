@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -53,8 +54,9 @@ namespace Projekt_zaliczeniowy
 
         static private void Menu(int choice)
         {
-            int rok_produkcji;
+            int rok_produkcji, second_level_choice ;
             float marza, cena;
+
             switch (choice)
             {
               case 1:
@@ -64,7 +66,16 @@ namespace Projekt_zaliczeniowy
                     Console.Write("----Honda \n");
                     Console.Read();
               break;
-                case 2:
+                case 2:                   
+                    Console.WriteLine("Wpisz cene pojazdu");
+                    cena = float.Parse(Console.ReadLine(), CultureInfo.InvariantCulture.NumberFormat);
+
+                    Console.WriteLine("Wpisz marze pojazdu");
+                    marza = float.Parse(Console.ReadLine(), CultureInfo.InvariantCulture.NumberFormat);
+
+                    Console.WriteLine("Wpisz rok_produkcji pojazdu");
+                    rok_produkcji = Convert.ToInt32(Console.ReadLine(), CultureInfo.InvariantCulture.NumberFormat);
+
                     Console.Write("------------------------------ \nWpisz jaki chcesz dodac pojazd\n");
                     Console.Write("1. Ford Mustang\n");
                     Console.Write("2. Ford Ranger\n");
@@ -72,16 +83,7 @@ namespace Projekt_zaliczeniowy
                     Console.Write("4. Fiat Panda\n");
                     Console.Write("5. Suzuki SuperSport\n");
                     Console.Write("6. Honda\n");
-                    choice = Convert.ToInt32(Console.Read());
-
-                    Console.WriteLine("Wpisz cene pojazdu");
-                    cena = Convert.ToSingle(Console.ReadLine());
-
-                    Console.WriteLine("Wpisz marze pojazdu");
-                    marza = Convert.ToSingle(Console.ReadLine());
-
-                    Console.WriteLine("Wpisz rok_produkcji pojazdu");
-                    rok_produkcji = Convert.ToInt32(Console.ReadLine());
+                    second_level_choice = Convert.ToInt16(Console.Read());
                     break;
                 default:
 
