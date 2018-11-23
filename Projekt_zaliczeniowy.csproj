@@ -42,20 +42,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Fiat.cs" />
-    <Compile Include="Ford.cs" />
-    <Compile Include="Motocykl.cs" />
-    <Compile Include="Multipla.cs" />
-    <Compile Include="Mustang.cs" />
-    <Compile Include="Panda.cs" />
-    <Compile Include="Pojazd.cs" />
+    <Compile Include="Pojazd\Samochod\Fiat\Fiat.cs" />
+    <Compile Include="Pojazd\Samochod\Ford\Ford.cs" />
+    <Compile Include="Pojazd\Motocykl\Honda\Honda.cs" />
+    <Compile Include="Pojazd\Motocykl\Motocykl.cs" />
+    <Compile Include="Pojazd\Samochod\Fiat\Multipla\Multipla.cs" />
+    <Compile Include="Pojazd\Samochod\Ford\Mustang\Mustang.cs" />
+    <Compile Include="Pojazd\Samochod\Fiat\Panda\Panda.cs" />
+    <Compile Include="Pojazd\Pojazd.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Ranger.cs" />
-    <Compile Include="Samochod.cs" />
+    <Compile Include="Pojazd\Samochod\Ford\Ranger\Ranger.cs" />
+    <Compile Include="Pojazd\Samochod\Samochod.cs" />
+    <Compile Include="Pojazd\Motocykl\Suzuki\SuperSport\SuperSport.cs" />
+    <Compile Include="Pojazd\Motocykl\Suzuki\Suzuki.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
