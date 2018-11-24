@@ -12,8 +12,7 @@ namespace Projekt_zaliczeniowy
         static List<Pojazd> lista = new List<Pojazd>();
 
         static void Main(string[] args)
-        {
-            lista.Add(new Mustang(123, 321, 311));
+        {            
             LetsMagicBegin();
 
             Console.Read();
@@ -40,9 +39,9 @@ namespace Projekt_zaliczeniowy
             Console.WriteLine("3.Wyszukaj pojazdy");
             Console.WriteLine("4.Sprzedaj pojazd");
             Console.WriteLine("---------------------------");
-           var choice = Console.ReadLine();
+            var choice = Console.ReadLine();
 
-           
+            Console.Clear();
 
             Menu(choice);
             
@@ -94,6 +93,7 @@ namespace Projekt_zaliczeniowy
                     break;
 
             }
+            Console.Clear();
             GetMenuChoice();
         }
         /// <summary>
@@ -113,6 +113,7 @@ namespace Projekt_zaliczeniowy
                     Console.Write("----Suzuki\n      --->SuperSport\n");
                     Console.Write("----Honda \n");
                     Console.Read();
+                    
                     break;
                 case "2":
                     Console.WriteLine("Wpisz cene pojazdu");
@@ -132,27 +133,28 @@ namespace Projekt_zaliczeniowy
                     Console.Write("5. Suzuki SuperSport\n");
                     Console.Write("6. Honda\n");
                     int second_level_choice = Convert.ToInt16(Console.ReadLine());
-                    lista.Add(new Panda(cena, marza, rok_produkcji));
-                   
-                      Add_car_menu(second_level_choice, cena, marza, rok_produkcji);
+                  
+                    Add_car_menu(second_level_choice, cena, marza, rok_produkcji);
                    
                   
                     break;
                 case "3":
                     foreach (object i in lista) 
                     {
-                        Console.WriteLine(Convert.ToString(i));
+                        Console.WriteLine(Convert.ToString(i.ToString()));
+                       
                     }
-
+                    
                     Console.Read();
                     break;
                 default:
                     GetMenuChoice();
                     break;
-
+              
 
             }
-
+            GetMenuChoice();
+            Console.Clear();
         }
     }
 }

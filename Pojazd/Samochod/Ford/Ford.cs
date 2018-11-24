@@ -16,5 +16,9 @@ namespace Projekt_zaliczeniowy
         {
             return "Ford";
         }
+        public override string ToString()
+        {
+            return string.Format($"\nModel: {WyswietlModel()} Cena zakupu: {CenaZakupu}, Marza: {Marza}, Rok produkcji: {RokProdukcji}\n");
+        }
     }
 }
