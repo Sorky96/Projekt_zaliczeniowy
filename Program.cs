@@ -34,11 +34,13 @@ namespace Projekt_zaliczeniowy
             GetMenuChoice();
             
         }
-
+        /// <summary>
+        /// Menu provided to user at the star of the program, have 4 options to choose 
+        /// </summary>
 
         static private void GetMenuChoice()
         {
-            int choice;
+            int choice = 0;
             Console.WriteLine("Wybierz co chcesz zrobic: ");
             Console.WriteLine("---------------------------");
             Console.WriteLine("1.Wyswietl listę pojazdów");
@@ -46,13 +48,16 @@ namespace Projekt_zaliczeniowy
             Console.WriteLine("3.Wyszukaj pojazdy");
             Console.WriteLine("4.Sprzedaj pojazd");
             Console.WriteLine("---------------------------");
-            choice = Convert.ToInt32(Console.ReadLine());
+            choice = Convert.ToInt16(Console.ReadLine());
 
 
             Menu(choice);
             
         }
-
+        /// <summary>
+        /// When user provide his choice he will be here. 
+        /// </summary>
+        /// <param name="choice"></param>
         static private void Menu(int choice)
         {
             int rok_produkcji, second_level_choice ;
@@ -69,7 +74,7 @@ namespace Projekt_zaliczeniowy
               break;
                 case 2:                   
                     Console.WriteLine("Wpisz cene pojazdu");
-                    cena = float.Parse(Console.ReadLine(), CultureInfo.InvariantCulture.NumberFormat);
+                    cena = float.Parse(Console.ReadLine(), CultureInfo.InvariantCulture.NumberFormat); // With cultureinfo user can use "." as seperator or "," base of windows option
 
                     Console.WriteLine("Wpisz marze pojazdu");
                     marza = float.Parse(Console.ReadLine(), CultureInfo.InvariantCulture.NumberFormat);
@@ -85,14 +90,17 @@ namespace Projekt_zaliczeniowy
                     Console.Write("5. Suzuki SuperSport\n");
                     Console.Write("6. Honda\n");
                     second_level_choice = Convert.ToInt32(Console.Read());
+                    Add_car_menu(second_level_choice, cena, marza, rok_produkcji);
                     break;
                 default:
-
-                break;
+                    GetMenuChoice();
+                    break;
 
             }
                         
         }
+
+
        /// <summary>
        /// Adds car to list of all cars. 
        /// </summary>
@@ -107,25 +115,32 @@ namespace Projekt_zaliczeniowy
             {
                 case 1:
                     lista.Add(new Mustang(cena, marza, rok_produkcji));
+                    
+                    GetMenuChoice();
                     break;
                 case 2:
                     lista.Add(new Ranger(cena, marza, rok_produkcji));
+                    GetMenuChoice();
                     break;
                 case 3:
                     lista.Add(new Multipla(cena, marza, rok_produkcji));
+                    GetMenuChoice();
                     break;
                 case 4:
                     lista.Add(new Panda(cena, marza, rok_produkcji));
+                    GetMenuChoice();
                     break;
                 case 5:
                     lista.Add(new SuperSport(cena, marza, rok_produkcji));
+                    GetMenuChoice();
                     break;
 
                 case 6:
                     lista.Add(new Honda(cena, marza, rok_produkcji));
+                    GetMenuChoice();
                     break;
                 default:
-
+                    GetMenuChoice();
                     break;
 
             }
