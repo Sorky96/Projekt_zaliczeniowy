@@ -12,6 +12,7 @@ namespace Projekt_zaliczeniowy
         static List<Pojazd> lista = new List<Pojazd>();
         static void Main(string[] args)
         {
+            lista.Add(new Mustang(123, 321, 311));
             LetsMagicBegin();
 
             Console.Read();
@@ -21,12 +22,6 @@ namespace Projekt_zaliczeniowy
 
         static private void LetsMagicBegin()
         {
-
-            foreach (object o in lista)
-            {
-                Console.WriteLine(o);
-            }
-            Console.Write("Hello world");
             GetMenuChoice();
             
         }
@@ -92,7 +87,7 @@ namespace Projekt_zaliczeniowy
                 case "3":
                     foreach(var o in lista)
                     {
-                        Console.Write(Convert.ToString(o));
+                        Console.WriteLine(Convert.ToString(o));
                     }
                     break;
                 default:
