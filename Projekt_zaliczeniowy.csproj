@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Menu.cs" />
     <Compile Include="Pojazd\Samochod\Fiat\Fiat.cs" />
     <Compile Include="Pojazd\Samochod\Ford\Ford.cs" />
     <Compile Include="Pojazd\Motocykl\Honda\Honda.cs" />

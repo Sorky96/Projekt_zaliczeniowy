@@ -15,7 +15,7 @@ namespace Projekt_zaliczeniowy
             LetsMagicBegin();
 
             Console.Read();
-            Mustang ford = new Mustang(1, 1, 2008);
+           
 
         }
 
@@ -34,9 +34,9 @@ namespace Projekt_zaliczeniowy
         /// Menu provided to user at the star of the program, have 4 options to choose 
         /// </summary>
 
-        static private void GetMenuChoice()
+         static private void GetMenuChoice()
         {
-            int choice = 0;
+            
             Console.WriteLine("Wybierz co chcesz zrobic: ");
             Console.WriteLine("---------------------------");
             Console.WriteLine("1.Wyswietl listę pojazdów");
@@ -44,8 +44,9 @@ namespace Projekt_zaliczeniowy
             Console.WriteLine("3.Wyszukaj pojazdy");
             Console.WriteLine("4.Sprzedaj pojazd");
             Console.WriteLine("---------------------------");
-            choice = Convert.ToInt16(Console.ReadLine());
+           var choice = Console.ReadLine();
 
+           
 
             Menu(choice);
             
@@ -54,21 +55,21 @@ namespace Projekt_zaliczeniowy
         /// When user provide his choice he will be here. 
         /// </summary>
         /// <param name="choice"></param>
-        static private void Menu(int choice)
+        static private void Menu(string choice)
         {
             int rok_produkcji, second_level_choice ;
             float marza, cena;
 
             switch (choice)
             {
-              case 1:
+              case "1":
                     Console.Write("----Ford \n      --->Mustang \n      --->Ranger\n");
                     Console.Write("----Fiat \n      --->Panda \n      --->Multipla\n");
                     Console.Write("----Suzuki\n      --->SuperSport\n");
                     Console.Write("----Honda \n");
                     Console.Read();
               break;
-                case 2:                   
+                case "2":                   
                     Console.WriteLine("Wpisz cene pojazdu");
                     cena = float.Parse(Console.ReadLine(), CultureInfo.InvariantCulture.NumberFormat); // With cultureinfo user can use "." as seperator or "," base of windows option
 

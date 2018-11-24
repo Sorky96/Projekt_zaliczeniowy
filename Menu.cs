@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace Projekt_zaliczeniowy
 {
+    /*
     class Menu_class
     {
+        static List<Pojazd> lista = new List<Pojazd>();
+
         static private void GetMenuChoice()
         {
             int choice = 0;
@@ -117,4 +120,5 @@ namespace Projekt_zaliczeniowy
             }
         }
     }
+    */
 }
