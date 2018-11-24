@@ -9,6 +9,7 @@ namespace Projekt_zaliczeniowy
 {
     class Program
     {
+        static List<Pojazd> lista = new List<Pojazd>();
         static void Main(string[] args)
         {
             LetsMagicBegin();
@@ -21,7 +22,7 @@ namespace Projekt_zaliczeniowy
         static private void LetsMagicBegin()
         {
 
-            List<Pojazd> lista = new List<Pojazd>();
+            
           
 
 
@@ -83,11 +84,49 @@ namespace Projekt_zaliczeniowy
                     Console.Write("4. Fiat Panda\n");
                     Console.Write("5. Suzuki SuperSport\n");
                     Console.Write("6. Honda\n");
-                    second_level_choice = Convert.ToInt16(Console.Read());
+                    second_level_choice = Convert.ToInt32(Console.Read());
                     break;
                 default:
 
                 break;
+
+            }
+                        
+        }
+       /// <summary>
+       /// Adds car to list of all cars. 
+       /// </summary>
+       /// <param name="choice"> param from Menu function, second_level_choice</param>
+       /// <param name="cena"></param>
+       /// <param name="marza"</param>
+       /// <param name="rok_produkcji"></param>
+        
+        static private void Add_car_menu(int choice, float cena, float marza, int rok_produkcji)
+        {
+            switch (choice)
+            {
+                case 1:
+                    lista.Add(new Mustang(cena, marza, rok_produkcji));
+                    break;
+                case 2:
+                   
+                    break;
+                case 3:
+
+                    break;
+                case 4:
+
+                    break;
+                case 5:
+
+                    break;
+
+                case 6:
+
+                    break;
+                default:
+
+                    break;
 
             }
         }
