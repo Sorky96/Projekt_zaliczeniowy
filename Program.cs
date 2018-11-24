@@ -89,9 +89,16 @@ namespace Projekt_zaliczeniowy
                     second_level_choice = Convert.ToInt32(Console.Read());
                     Add_car_menu(second_level_choice, cena, marza, rok_produkcji);
                     break;
+                case "3":
+                    foreach(var o in lista)
+                    {
+                        Console.Write(Convert.ToString(o));
+                    }
+                    break;
                 default:
                     GetMenuChoice();
                     break;
+
 
             }
                         
@@ -117,8 +124,8 @@ namespace Projekt_zaliczeniowy
                     break;
                 case 2:
                     lista.Add(new Ranger(cena, marza, rok_produkcji));
-                   // GetMenuChoice();
-                    LetsMagicBegin();
+                    GetMenuChoice();
+                   
                     break;
                 case 3:
                     lista.Add(new Multipla(cena, marza, rok_produkcji));
