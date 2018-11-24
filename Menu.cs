@@ -1,39 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Projekt_zaliczeniowy
 {
-    class Program
+    class Menu_class
     {
-        static List<Pojazd> lista = new List<Pojazd>();
-        static void Main(string[] args)
-        {
-            LetsMagicBegin();
-
-            Console.Read();
-            Mustang ford = new Mustang(1, 1, 2008);
-
-        }
-
-        static private void LetsMagicBegin()
-        {
-
-            foreach (object o in lista)
-            {
-                Console.WriteLine(o);
-            }
-            Console.Write("Hello world");
-            GetMenuChoice();
-            
-        }
-        /// <summary>
-        /// Menu provided to user at the star of the program, have 4 options to choose 
-        /// </summary>
-
         static private void GetMenuChoice()
         {
             int choice = 0;
@@ -48,7 +22,7 @@ namespace Projekt_zaliczeniowy
 
 
             Menu(choice);
-            
+
         }
         /// <summary>
         /// When user provide his choice he will be here. 
@@ -56,19 +30,19 @@ namespace Projekt_zaliczeniowy
         /// <param name="choice"></param>
         static private void Menu(int choice)
         {
-            int rok_produkcji, second_level_choice ;
+            int rok_produkcji, second_level_choice;
             float marza, cena;
 
             switch (choice)
             {
-              case 1:
+                case 1:
                     Console.Write("----Ford \n      --->Mustang \n      --->Ranger\n");
                     Console.Write("----Fiat \n      --->Panda \n      --->Multipla\n");
                     Console.Write("----Suzuki\n      --->SuperSport\n");
                     Console.Write("----Honda \n");
                     Console.Read();
-              break;
-                case 2:                   
+                    break;
+                case 2:
                     Console.WriteLine("Wpisz cene pojazdu");
                     cena = float.Parse(Console.ReadLine(), CultureInfo.InvariantCulture.NumberFormat); // With cultureinfo user can use "." as seperator or "," base of windows option
 
@@ -93,30 +67,30 @@ namespace Projekt_zaliczeniowy
                     break;
 
             }
-                        
+
         }
 
 
-       /// <summary>
-       /// Adds car to list of all cars. 
-       /// </summary>
-       /// <param name="choice"> param from Menu function, second_level_choice</param>
-       /// <param name="cena"></param>
-       /// <param name="marza"</param>
-       /// <param name="rok_produkcji"></param>
-        
+        /// <summary>
+        /// Adds car to list of all cars. 
+        /// </summary>
+        /// <param name="choice"> param from Menu function, second_level_choice</param>
+        /// <param name="cena"></param>
+        /// <param name="marza"</param>
+        /// <param name="rok_produkcji"></param>
+
         static private void Add_car_menu(int choice, float cena, float marza, int rok_produkcji)
         {
             switch (choice)
             {
                 case 1:
                     lista.Add(new Mustang(cena, marza, rok_produkcji));
-                    
+
                     GetMenuChoice();
                     break;
                 case 2:
                     lista.Add(new Ranger(cena, marza, rok_produkcji));
-                   // GetMenuChoice();
+                    // GetMenuChoice();
                     LetsMagicBegin();
                     break;
                 case 3:
