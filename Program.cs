@@ -167,16 +167,19 @@ namespace Projekt_zaliczeniowy
             GetMenuChoice();
             Console.Clear();
         }
-
+        /// <summary>
+        /// Method that serach for specific cars that they are in the range of query. You can search for price or year
+        /// </summary>
+        /// <param name="choice"> provided by user</param>
         static void SearchFor(string choice)
         {
             switch (choice)
             {
                 case "1":
                     Console.WriteLine("Podaj przedzial lat od \n");
-                    int starting_year = Convert.ToInt16(Console.ReadLine());
+                    int starting_year = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine("Podaj przedzial lat do \n");
-                    int final_year = Convert.ToInt16(Console.ReadLine());
+                    int final_year = Convert.ToInt32(Console.ReadLine());
 
                     Console.WriteLine(lista.Find(item => item.RokProdukcji > starting_year && item.RokProdukcji < final_year));
                     Console.Read();
@@ -184,9 +187,9 @@ namespace Projekt_zaliczeniowy
 
                 case "2":
                     Console.WriteLine("Podaj przedzial cenowy od \n");
-                    int starting_price = Convert.ToInt16(Console.ReadLine());
+                    int starting_price = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine("Podaj przedzial cenowy do \n");
-                    int final_price = Convert.ToInt16(Console.ReadLine());
+                    int final_price = Convert.ToInt32(Console.ReadLine());
 
                     Console.WriteLine(lista.Find(item => item.CenaKoncowa() > starting_price && item.RokProdukcji < final_price));
                     Console.Read();
