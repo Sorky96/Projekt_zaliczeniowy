@@ -46,58 +46,7 @@ namespace Projekt_zaliczeniowy
             Menu(choice);
             
         }
-        /// <summary>
-        /// When user provide his choice he will be here. 
-        /// </summary>
-        /// <param name="choice"></param>
-        static private void Menu(string choice)
-        {
-            int rok_produkcji, second_level_choice ;
-            float marza, cena;
-
-            switch (choice)
-            {
-              case "1":
-                    Console.Write("----Ford \n      --->Mustang \n      --->Ranger\n");
-                    Console.Write("----Fiat \n      --->Panda \n      --->Multipla\n");
-                    Console.Write("----Suzuki\n      --->SuperSport\n");
-                    Console.Write("----Honda \n");
-                    Console.Read();
-              break;
-                case "2":                   
-                    Console.WriteLine("Wpisz cene pojazdu");
-                    cena = float.Parse(Console.ReadLine(), CultureInfo.InvariantCulture.NumberFormat); // With cultureinfo user can use "." as seperator or "," base of windows option
-
-                    Console.WriteLine("Wpisz marze pojazdu");
-                    marza = float.Parse(Console.ReadLine(), CultureInfo.InvariantCulture.NumberFormat);
-
-                    Console.WriteLine("Wpisz rok_produkcji pojazdu");
-                    rok_produkcji = Convert.ToInt32(Console.ReadLine());
-
-                    Console.Write("------------------------------ \nWpisz jaki chcesz dodac pojazd\n");
-                    Console.Write("1. Ford Mustang\n");
-                    Console.Write("2. Ford Ranger\n");
-                    Console.Write("3. Fiat Multipla\n");
-                    Console.Write("4. Fiat Panda\n");
-                    Console.Write("5. Suzuki SuperSport\n");
-                    Console.Write("6. Honda\n");
-                    second_level_choice = Convert.ToInt32(Console.Read());
-                    Add_car_menu(second_level_choice, cena, marza, rok_produkcji);
-                    break;
-                case "3":
-                    foreach(var o in lista)
-                    {
-                        Console.WriteLine(Convert.ToString(o));
-                    }
-                    break;
-                default:
-                    GetMenuChoice();
-                    break;
-
-
-            }
-                        
-        }
+       
 
 
        /// <summary>
@@ -144,6 +93,64 @@ namespace Projekt_zaliczeniowy
                     break;
 
             }
+        }
+        /// <summary>
+        /// When user provide his choice he will be here. 
+        /// </summary>
+        /// <param name="choice"></param>
+        static private void Menu(string choice)
+        {
+            int rok_produkcji;
+            float marza, cena;
+
+            switch (choice)
+            {
+                case "1":
+                    Console.Write("----Ford \n      --->Mustang \n      --->Ranger\n");
+                    Console.Write("----Fiat \n      --->Panda \n      --->Multipla\n");
+                    Console.Write("----Suzuki\n      --->SuperSport\n");
+                    Console.Write("----Honda \n");
+                    Console.Read();
+                    break;
+                case "2":
+                    Console.WriteLine("Wpisz cene pojazdu");
+                    cena = float.Parse(Console.ReadLine(), CultureInfo.InvariantCulture.NumberFormat); // With cultureinfo user can use "." as seperator or "," base of windows option
+
+                    Console.WriteLine("Wpisz marze pojazdu");
+                    marza = float.Parse(Console.ReadLine(), CultureInfo.InvariantCulture.NumberFormat);
+
+                    Console.WriteLine("Wpisz rok_produkcji pojazdu");
+                    rok_produkcji = Convert.ToInt32(Console.ReadLine());
+
+                    Console.Write("------------------------------ \nWpisz jaki chcesz dodac pojazd\n");
+                    Console.Write("1. Ford Mustang\n");
+                    Console.Write("2. Ford Ranger\n");
+                    Console.Write("3. Fiat Multipla\n");
+                    Console.Write("4. Fiat Panda\n");
+                    Console.Write("5. Suzuki SuperSport\n");
+                    Console.Write("6. Honda\n");
+                    int second_level_choice = Convert.ToInt16(Console.Read());
+                    lista.Add(new Panda(cena, marza, rok_produkcji));
+                   
+                      Add_car_menu(second_level_choice, cena, marza, rok_produkcji);
+                   
+                  
+                    break;
+                case "3":
+                    foreach (object i in lista) 
+                    {
+                        Console.WriteLine(Convert.ToString(i));
+                    }
+
+                    Console.Read();
+                    break;
+                default:
+                    GetMenuChoice();
+                    break;
+
+
+            }
+
         }
     }
 }
