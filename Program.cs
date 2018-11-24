@@ -10,6 +10,7 @@ namespace Projekt_zaliczeniowy
     class Program
     {
         static List<Pojazd> lista = new List<Pojazd>();
+
         static void Main(string[] args)
         {
             lista.Add(new Mustang(123, 321, 311));
@@ -64,35 +65,36 @@ namespace Projekt_zaliczeniowy
                 case 1:
                     lista.Add(new Mustang(cena, marza, rok_produkcji));
                     
-                    GetMenuChoice();
+                    
                     break;
                 case 2:
                     lista.Add(new Ranger(cena, marza, rok_produkcji));
-                    GetMenuChoice();
+                   
                    
                     break;
                 case 3:
                     lista.Add(new Multipla(cena, marza, rok_produkcji));
-                    GetMenuChoice();
+                   
                     break;
                 case 4:
                     lista.Add(new Panda(cena, marza, rok_produkcji));
-                    GetMenuChoice();
+                  
                     break;
                 case 5:
                     lista.Add(new SuperSport(cena, marza, rok_produkcji));
-                    GetMenuChoice();
+                    
                     break;
 
                 case 6:
                     lista.Add(new Honda(cena, marza, rok_produkcji));
-                    GetMenuChoice();
+                    
                     break;
                 default:
-                    GetMenuChoice();
+                    
                     break;
 
             }
+            GetMenuChoice();
         }
         /// <summary>
         /// When user provide his choice he will be here. 
@@ -129,7 +131,7 @@ namespace Projekt_zaliczeniowy
                     Console.Write("4. Fiat Panda\n");
                     Console.Write("5. Suzuki SuperSport\n");
                     Console.Write("6. Honda\n");
-                    int second_level_choice = Convert.ToInt16(Console.Read());
+                    int second_level_choice = Convert.ToInt16(Console.ReadLine());
                     lista.Add(new Panda(cena, marza, rok_produkcji));
                    
                       Add_car_menu(second_level_choice, cena, marza, rok_produkcji);
