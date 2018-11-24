@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Projekt_zaliczeniowy
 {
-    abstract class Honda : Motocykl
+    sealed class Honda : Motocykl
     {
         public Honda(float cenaZakupu, float marza, int rokProdukcji) : base(cenaZakupu, marza, rokProdukcji)
         {
@@ -16,6 +16,14 @@ namespace Projekt_zaliczeniowy
         {
             return "Honda";
         }
+        public override string WyswietlModel()
+        {
+            return "Honda";
+        }
 
+        public override string WyswietlTypPojazdu()
+        {
+            return "Motocykl";
+        }
     }
 }

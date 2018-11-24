@@ -109,20 +109,20 @@ namespace Projekt_zaliczeniowy
                     lista.Add(new Mustang(cena, marza, rok_produkcji));
                     break;
                 case 2:
-                   
+                    lista.Add(new Ranger(cena, marza, rok_produkcji));
                     break;
                 case 3:
-
+                    lista.Add(new Multipla(cena, marza, rok_produkcji));
                     break;
                 case 4:
-
+                    lista.Add(new Panda(cena, marza, rok_produkcji));
                     break;
                 case 5:
-
+                    lista.Add(new SuperSport(cena, marza, rok_produkcji));
                     break;
 
                 case 6:
-
+                    lista.Add(new Honda(cena, marza, rok_produkcji));
                     break;
                 default:
 
