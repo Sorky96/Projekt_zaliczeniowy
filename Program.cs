@@ -159,7 +159,7 @@ namespace Projekt_zaliczeniowy
                     Console.Read();
                     break;
                 default:
-                    GetMenuChoice();
+                    
                     break;
 
 
@@ -181,7 +181,22 @@ namespace Projekt_zaliczeniowy
                     Console.WriteLine("Podaj przedzial lat do \n");
                     int final_year = Convert.ToInt32(Console.ReadLine());
 
-                    Console.WriteLine(lista.Find(item => item.RokProdukcji > starting_year && item.RokProdukcji < final_year));
+                    List<Pojazd> year_result = lista.FindAll(delegate (Pojazd item)
+                    {
+                        return item.CenaZakupu >= starting_year && item.CenaZakupu <= final_year;
+                    });
+                    if (year_result.Count != 0)
+                    {
+                        foreach (Pojazd p in year_result)
+                        {
+                            Console.WriteLine(Convert.ToString(p));
+                        }
+                    }
+                    else
+                    {
+                        Console.Write("Lista jest pusta\n");
+                    }
+
                     Console.Read();
                     break;
 
@@ -190,9 +205,26 @@ namespace Projekt_zaliczeniowy
                     int starting_price = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine("Podaj przedzial cenowy do \n");
                     int final_price = Convert.ToInt32(Console.ReadLine());
+                    lista.Add(new Mustang(1000, 2000, 2019));
 
-                    Console.WriteLine(lista.Find(item => item.CenaKoncowa() > starting_price && item.RokProdukcji < final_price));
-                    Console.Read();
+
+                    List<Pojazd> price_result = lista.FindAll(delegate (Pojazd item)
+                    {
+                        return item.CenaZakupu >= starting_price && item.CenaZakupu <= final_price;
+                    });
+                    if (price_result.Count != 0)
+                    {
+                        foreach (Pojazd p in price_result)
+                        {
+                            Console.WriteLine(Convert.ToString(p));
+                        }
+                    }
+                    else
+                    {
+                        Console.Write("Lista jest pusta\n");
+                    }
+
+                        Console.Read();
                     break;
             }
             GetMenuChoice();
