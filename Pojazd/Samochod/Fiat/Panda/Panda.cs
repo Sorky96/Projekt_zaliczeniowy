@@ -18,7 +18,7 @@ namespace Projekt_zaliczeniowy
         }
         public override string WyswietlModel()
         {
-            return "Panda";
+            return "Pan-da-5";
         }
         public override string ToString()
         {
