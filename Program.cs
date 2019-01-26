@@ -13,8 +13,13 @@ namespace Projekt_zaliczeniowy
 
         static void Main(string[] args)
         {
-            LetsMagicBegin();
+            lista.Add(new Mustang(200, 2012, 2020));
+            lista.Add(new Mustang(200, 2012, 2021));
+            lista.Add(new Mustang(200, 2012, 2008));
+            lista.Add(new Mustang(200, 2012, 2009));
 
+            LetsMagicBegin();
+            
             Console.Read();
         }
 
@@ -36,7 +41,7 @@ namespace Projekt_zaliczeniowy
             Console.WriteLine("1.Wyswietl listę pojazdów");
             Console.WriteLine("2.Dodaj nowy pojazd");
             Console.WriteLine("3.Wyszukaj pojazdy");
-            Console.WriteLine("4.Sprzedaj pojazd");
+            Console.WriteLine("4.Usun pojazdy");
             Console.WriteLine("---------------------------");
             var choice = Console.ReadLine();
 
@@ -107,6 +112,10 @@ namespace Projekt_zaliczeniowy
             int rok_produkcji;
             float marza, cena;
 
+
+            
+
+
             switch (choice)
             {
                 case "1":
@@ -141,14 +150,7 @@ namespace Projekt_zaliczeniowy
                     break;
 
                 case "3":
-                    //int indexer = 1;
-                    //foreach (object i in lista)
-                    //{
-
-                    //    Console.WriteLine($"{indexer}. {i} \n");
-                    //    indexer++;
-                    //    Console.WriteLine(lista.Find(item => item.RokProdukcji > 2010));
-                    //}
+                   
                     Console.Write("------------------------------ \nWyszukaj po: \n");
                     Console.Write("1. Rocznik \n");
                     Console.Write("2. Cena \n");
@@ -158,6 +160,19 @@ namespace Projekt_zaliczeniowy
 
                     Console.Read();
                     break;
+
+                case "4":
+
+                    Console.Write("------------------------------ \n Usun po: \n");
+                    Console.Write("1. Rocznik \n");
+                    Console.Write("2. Cena \n");
+                    var delete_choice = Console.ReadLine();
+
+                    DeleteFromList(delete_choice);
+
+                    Console.Read();
+                    break;
+
                 default:
                     
                     break;
@@ -183,7 +198,8 @@ namespace Projekt_zaliczeniowy
 
                     List<Pojazd> year_result = lista.FindAll(delegate (Pojazd item)
                     {
-                        return item.CenaZakupu >= starting_year && item.CenaZakupu <= final_year;
+                        return item.RokProdukcji >= starting_year && item.RokProdukcji <= final_year;
+                        
                     });
                     if (year_result.Count != 0)
                     {
@@ -196,7 +212,7 @@ namespace Projekt_zaliczeniowy
                     {
                         Console.Write("Lista jest pusta\n");
                     }
-
+                    
                     Console.Read();
                     break;
 
@@ -205,7 +221,7 @@ namespace Projekt_zaliczeniowy
                     int starting_price = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine("Podaj przedzial cenowy do \n");
                     int final_price = Convert.ToInt32(Console.ReadLine());
-                    lista.Add(new Mustang(1000, 2000, 2019));
+                    
 
 
                     List<Pojazd> price_result = lista.FindAll(delegate (Pojazd item)
@@ -225,6 +241,57 @@ namespace Projekt_zaliczeniowy
                     }
 
                         Console.Read();
+                    break;
+            }
+            GetMenuChoice();
+            Console.Clear();
+        }
+
+        static void DeleteFromList(string choice)
+        {
+            switch (choice)
+            {
+                case "1":
+                    Console.WriteLine("Podaj przedzial lat od \n");
+                    int starting_year = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Podaj przedzial lat do \n");
+                    int final_year = Convert.ToInt32(Console.ReadLine());
+
+                    List<Pojazd> year_result = lista.FindAll(delegate (Pojazd item)
+                    {
+                        lista.RemoveAll(x => x.RokProdukcji  >= starting_year && x.RokProdukcji <= final_year);
+                        return item.RokProdukcji >= starting_year && item.RokProdukcji <= final_year;
+
+                    });
+                   
+                    if (year_result.Count == 0)
+                    {
+                        Console.Write("Lista jest pusta\n");
+                    }
+                    Console.WriteLine("Usunieto podane pozycje");
+                    Console.Read();
+                    break;
+
+                case "2":
+                    Console.WriteLine("Podaj przedzial cenowy od \n");
+                    int starting_price = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Podaj przedzial cenowy do \n");
+                    int final_price = Convert.ToInt32(Console.ReadLine());
+                    lista.Add(new Mustang(1000, 2000, 2019));
+
+
+                    List<Pojazd> price_result = lista.FindAll(delegate (Pojazd item)
+                    {
+                        lista.RemoveAll(x => x.CenaZakupu >= starting_price && x.CenaZakupu <= final_price);
+                        return item.CenaZakupu >= starting_price && item.CenaZakupu <= final_price;
+                    });
+                   
+                    if (price_result.Count == 0)
+                    {
+                        Console.Write("Lista jest pusta\n");
+                    }
+                    Console.WriteLine("Usunieto wybrane pozycje");
+                    Console.Read();
                     break;
             }
             GetMenuChoice();
