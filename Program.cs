@@ -13,11 +13,7 @@ namespace Projekt_zaliczeniowy
 
         static void Main(string[] args)
         {
-            lista.Add(new Mustang(200, 2012, 2020));
-            lista.Add(new Mustang(200, 2012, 2021));
-            lista.Add(new Mustang(200, 2012, 2008));
-            lista.Add(new Mustang(200, 2012, 2009));
-
+            
             LetsMagicBegin();
             
             Console.Read();
